@@ -4,8 +4,8 @@ using namespace std;
 
 struct Node
 {
-    string dataString;
-    long long dataLong;
+    string Mahasiswa;
+    long long nomorMahasiswa;
     Node *next;
 };
 
@@ -18,28 +18,28 @@ public:
     LinkedList() : head(nullptr) {}
 
     // Fungsi untuk menambahkan node diawal linkedlist
-    void insert(string dataString, long long dataLong)
+    void insert(string Mahasiswa, long long nomorMahasiswa)
     {
         Node *newNode = new Node;
-        newNode->dataString = dataString;
-        newNode->dataLong = dataLong;
+        newNode->Mahasiswa = Mahasiswa;
+        newNode->nomorMahasiswa = nomorMahasiswa;
         newNode->next = head;
         head = newNode;
     }
 
-    // Function to print the linked list
+    // Fungsi untuk menampilkan seluruh linkedlist
     void display()
     {
         Node *temp = head;
         while (temp != nullptr)
         {
-            cout << "(" << temp->dataString << ", " << temp->dataLong << ") -> ";
+            cout << "(" << temp->Mahasiswa << ", " << temp->nomorMahasiswa << ") -> ";
             temp = temp->next;
         }
         cout << "nullptr" << endl;
     }
 
-    // Function to delete the entire linked list to prevent memory leaks
+    // Fungsi untuk menghapus seluruh linked list
     void deleteList()
     {
         Node *current = head;
@@ -62,16 +62,16 @@ public:
 
 int main()
 {
-    LinkedList myList;
+    LinkedList idMahasiswa;
 
     // Memasukan elemen kedalam linkedlist
-    myList.insert("Muhammad Fiqi Firmansyah", 2304130103);
-    myList.insert("Adi", 2304130102);
-    myList.insert("Bagas", 2304130101);
+    idMahasiswa.insert("Muhammad Fiqi Firmansyah", 2304130103);
+    idMahasiswa.insert("Adi", 2304130102);
+    idMahasiswa.insert("Bagas", 2304130101);
 
     // Menampilkan LinkedList
     cout << "Linked List: ";
-    myList.display();
+    idMahasiswa.display();
 
     return 0;
 }
